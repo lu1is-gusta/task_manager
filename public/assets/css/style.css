@@ -7,7 +7,7 @@
 
 :root{
     --background-light: #F0F2FA;
-    --background-white: #F6F5FF;
+    --background-white: #C0C0C0;/* #F6F5FF;*/
     --text-dark: #0A0040;
     --color-primary: #6143FF;
 }
@@ -32,8 +32,8 @@ body {
 
 nav {
     height: 100px;
-    background-color: var(--background-light);
-    width: cal(100vh - 100px);
+    background-color: var(--background-white);
+    width: calc(100vw - 100px);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -62,8 +62,7 @@ main {
 section.graph {
     width: 33%;
     height: 100%;
-    display: flex;
-    padding: 5px;
+    padding: 5px; 
 }
 
 .graph-header {
@@ -128,7 +127,7 @@ hr.lineheader {
 }
 
 .task:hover {
-    background-color: var(--background-light);
+    background-color: var(--background-white);
 }
 
 .title {
