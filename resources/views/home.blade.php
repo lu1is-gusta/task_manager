@@ -25,6 +25,21 @@
                             <option value="1"> All tasks</option>
                         </select>
                     </div>
+                    <div class="task-list">
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox" name="" id="">
+                                <h3 class="task-title">Title of Task</h3>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <h6>Title of Task</h6>
+                            </div>
+                            <div class="actions">
+                                Edit - Delete
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
