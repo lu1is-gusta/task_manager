@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="sidebar">
-
+            <img src="/assets/images/logo.png" alt="">
         </div>
         <div class="content">
             <nav>
@@ -13,15 +13,19 @@
                 <section class="graph">
                     <div class="graph-header">
                         <h2>Progress of the Day</h2>
-                        <hr class="lineheader"/>
-                        Date
+                        <div class="graph-header-line"></div>
+                        <div class="graph-geader-date">Date</div>
                     </div>
                     <div class="graph-header-subtitle"> Tasks: <b>3/6</b></div>
 
                     <div class="graph-placeholder">
-
+                        
                     </div>
-                    <p class="graph-header-tasks-left">sjkdhkasjdhkjshdkjdhaksjdhasdkjasdhjkas</p>
+
+                    <div class="tasks-left-footer">
+                        <img src="/assets/images/icon-info.png" alt="">
+                        sjkdhkasjdhkjshdkjdhaksjdhasdkjasdhjkas
+                    </div>
                 </section>
                 <section class="list">
                     <div class="list-header">
@@ -40,7 +44,12 @@
                                 <h6>Title of Task</h6>
                             </div>
                             <div class="actions">
-                                Edit - Delete
+                                <a href="#">
+                                    <img src="/assets/images/icon-edit.png" alt="">
+                                </a> 
+                                <a href="#">
+                                    <img src="/assets/images/icon-delete.png" alt="">
+                                </a> 
                             </div>
                         </div>
                     </div>
