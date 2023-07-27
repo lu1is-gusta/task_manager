@@ -14,7 +14,11 @@
                     <div class="graph-header">
                         <h2>Progress of the Day</h2>
                         <div class="graph-header-line"></div>
-                        <div class="graph-geader-date">Date</div>
+                        <div class="graph-geader-date">
+                            <img src="/assets/images/icon-prev.png" alt="">
+                                March, 16
+                            <img src="/assets/images/icon-next.png" alt="">
+                        </div>
                     </div>
                     <div class="graph-header-subtitle"> Tasks: <b>3/6</b></div>
 
