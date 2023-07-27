@@ -47,6 +47,11 @@ nav {
 .btn {
     padding: 20px 30px;
     border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 a.btn {
@@ -146,6 +151,13 @@ h2 {
    padding: 30px 15px;
    margin-bottom: 10px;
    border-bottom: 1px solid var(--background-light);
+   transition: all .3s ease-in-out;
+}
+
+.task:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .task:hover {
@@ -173,6 +185,11 @@ h2 {
 .actions a {
     margin-left: 20px;
     margin-right: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.actions a:hover {
+    transform: scale(1.50);
 }
 
 .task-title {
