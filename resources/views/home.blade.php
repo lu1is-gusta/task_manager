@@ -38,7 +38,24 @@
                         </select>
                     </div>
                     <div class="task-list">
-                        <x-task/>
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox" name="" id=""/>
+                                <h3 class="task-title">Title of Task</h3>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <h6>Title of Task</h6>
+                            </div>
+                            <div class="actions">
+                                <a href="#">
+                                    <img src="/assets/images/icon-edit.png" alt="">
+                                </a> 
+                                <a href="#">
+                                    <img src="/assets/images/icon-delete.png" alt="">
+                                </a> 
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
