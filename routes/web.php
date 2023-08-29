@@ -26,6 +26,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(TaskController::class)->group(function () {
     Route::get('/task/create', 'create');
+    Route::post('/task/store', 'store');
     Route::get('/task/edit/{id}', 'edit');
     Route::delete('/task/delete/{id}', 'delete');
 });
