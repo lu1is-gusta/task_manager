@@ -7,7 +7,7 @@
         </div>
         <div class="content">
             <nav>
-                <a href="#" class="btn btn-primary">Create Task</a>
+                <a href="{{ url('/task/create') }}" class="btn btn-primary">Create Task</a>
             </nav>
             <main>
                 <section class="graph">
@@ -37,26 +37,28 @@
                             <option value="1"> All tasks</option>
                         </select>
                     </div>
-                    <div class="task-list">
-                        <div class="task">
-                            <div class="title">
-                                <input type="checkbox" name="" id=""/>
-                                <h3 class="task-title">Title of Task</h3>
-                            </div>
-                            <div class="priority">
-                                <div class="sphere"></div>
-                                <h6>Title of Task</h6>
-                            </div>
-                            <div class="actions">
-                                <a href="#">
-                                    <img src="/assets/images/icon-edit.png" alt="">
-                                </a> 
-                                <a href="#">
-                                    <img src="/assets/images/icon-delete.png" alt="">
-                                </a> 
+                    @foreach ($tasksHome as $taskHome)
+                        <div class="task-list">
+                            <div class="task">
+                                <div class="title">
+                                    <input type="checkbox" name="" id=""/>
+                                    <h3 class="task-title">{{ $taskHome->title ?? ''}}</h3>
+                                </div>
+                                <div class="priority">
+                                    <div class="sphere"></div>
+                                    <h6>{{ $taskHome->category->title ?? ''}}</h6>
+                                </div>
+                                <div class="actions">
+                                    <a href="{{ url('/task/edit/$taskHome->id') }}">
+                                        <img src="/assets/images/icon-edit.png" alt="">
+                                    </a> 
+                                    <a href="#">
+                                        <img src="/assets/images/icon-delete.png" alt="">
+                                    </a> 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </section>
             </main>
         </div>
