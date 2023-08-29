@@ -41,7 +41,11 @@
                         <div class="task-list">
                             <div class="task">
                                 <div class="title">
-                                    <input type="checkbox" name="" id=""/>
+                                    <input type="checkbox"
+                                        @if($taskHome and $taskHome->done)
+                                            checked
+                                        @endif
+                                    />
                                     <h3 class="task-title">{{ $taskHome->title ?? ''}}</h3>
                                 </div>
                                 <div class="priority">
