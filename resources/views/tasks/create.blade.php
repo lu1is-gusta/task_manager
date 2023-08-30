@@ -10,7 +10,7 @@
                 <a href="{{ url('/') }}" class="btn btn-primary">Back</a>
             </nav>
             <main>
-                <section id="create-task-section">
+                <section id="task-section">
                     <h1>Create Task</h1>
                     <form method="POST" action="{{ url('/task/store') }}">
                         @csrf

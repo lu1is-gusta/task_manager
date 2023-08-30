@@ -17,7 +17,7 @@ class TaskController extends Controller
 
     public function store(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
         $task = Task::create([$request->all()]);
 
         return redirect(route('home'));
@@ -25,6 +25,20 @@ class TaskController extends Controller
 
     public function edit(Request $request, $id){
 
-        return view('tasks.edit');
+        $task = Task::findOrFail($id);
+        $categories = Category::all();
+        
+        return view('tasks.edit', ['task' => $task, 'categories' => $categories]);
+    }
+
+    public function update(Request $request, $id){
+        
+        $task = Task::findOrFail($id)->update([
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'description' => $request->description
+        ]);
+        
+        return redirect(route('home'));
     }
 }

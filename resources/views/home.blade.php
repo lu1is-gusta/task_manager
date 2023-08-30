@@ -53,7 +53,7 @@
                                     <h6>{{ $taskHome->category->title ?? ''}}</h6>
                                 </div>
                                 <div class="actions">
-                                    <a href="{{ url('/task/edit/$taskHome->id') }}">
+                                    <a href="{{ url('/task/edit', ['id' => $taskHome->id]) }}">
                                         <img src="/assets/images/icon-edit.png" alt="">
                                     </a> 
                                     <a href="#">
