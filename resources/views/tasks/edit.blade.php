@@ -18,6 +18,15 @@
 
                         <div class="div-form">
                             <label for="title">Title of Task</label>
+                            <input type="checkbox" name="done" id="done" value="1" 
+                                @if ($task->done == 1)
+                                    checked
+                                @endif
+                            />
+                        </div>
+
+                        <div class="div-form">
+                            <label for="title">Title of Task</label>
                             <input type="text" name="title" id="title" placeholder="Enter task title" value="{{ $task->title ?? '' }}" required/>
                         </div>
 

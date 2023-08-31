@@ -17,8 +17,17 @@ class TaskController extends Controller
 
     public function store(Request $request){
 
-        // dd($request->all());
-        $task = Task::create([$request->all()]);
+        $done = $request->exists('done') ? 1 : 0;
+        $user = 1;
+        
+        $task = Task::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'user_id' => $user,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'done' => $done
+        ]);
 
         return redirect(route('home'));
     }
@@ -33,11 +42,14 @@ class TaskController extends Controller
 
     public function update(Request $request, $id){
         
+        $done = $request->done != '1' ? false : true;
+
         $task = Task::findOrFail($id)->update([
             'title' => $request->title,
             'date' => $request->date,
             'category_id' => $request->category_id,
-            'description' => $request->description
+            'description' => $request->description,
+            'done' => $done
         ]);
         
         return redirect(route('home'));

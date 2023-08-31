@@ -17,6 +17,11 @@
 
                         <div class="div-form">
                             <label for="title">Title of Task</label>
+                            <input type="checkbox" name="done" id="done" value="checked" />
+                        </div>
+
+                        <div class="div-form">
+                            <label for="title">Title of Task</label>
                             <input type="text" name="title" id="title" placeholder="Enter task title" required/>
                         </div>
 
