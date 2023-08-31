@@ -12,6 +12,15 @@
             <main>
                 <section id="task-section">
                     <h1>Create Task</h1>
+
+                    @if($errors->any())
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                     <form method="POST" action="{{ url('/task/store') }}">
                         @csrf
 
@@ -27,7 +36,7 @@
 
                         <div class="div-form">
                             <label for="date">Date</label>
-                            <input type="datetime-local" name="date" id="date" placeholder="Enter the date" required/>
+                            <input type="datetime-local" name="date" id="date" required/>
                         </div>
 
                         <div class="div-form">

@@ -8,6 +8,11 @@
         <div class="content">
             <nav>
                 <a href="{{ url('/task/create') }}" class="btn btn-primary">Create Task</a>
+                @if($authUser)
+                    <a href="{{ url('/logout') }}" class="btn btn-primary">Logout</a>
+                @else
+                    <a href="{{ url('/login') }}" class="btn btn-primary">Sign In</a>
+                @endif
             </nav>
             <main>
                 <section class="graph">

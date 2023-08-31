@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Task;
 
@@ -18,18 +19,18 @@ class TaskController extends Controller
     public function store(Request $request){
 
         $done = $request->exists('done') ? 1 : 0;
-        $user = 1;
+        $user = Auth::User();
         
         $task = Task::create([
             'title' => $request->title,
             'date' => $request->date,
-            'user_id' => $user,
+            'user_id' => $user->id,
             'category_id' => $request->category_id,
             'description' => $request->description,
             'done' => $done
         ]);
 
-        return redirect(route('home'));
+        return redirect()->route('home');
     }
 
     public function edit(Request $request, $id){
@@ -52,13 +53,13 @@ class TaskController extends Controller
             'done' => $done
         ]);
         
-        return redirect(route('home'));
+        return redirect()->route('home');
     }
 
     public function delete($id){
         
         $task = Task::findOrFail($id)->delete();
         
-        return redirect(route('home'));
+        return redirect()->route('home');
     }
 }

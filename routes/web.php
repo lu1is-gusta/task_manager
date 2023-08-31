@@ -21,7 +21,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index');
+    Route::post('/login/store', 'loginStore');
     Route::get('/register', 'register');
+    Route::post('/register/store', 'registerStore');
+    Route::get('/logout', 'logout');
 });
 
 Route::controller(TaskController::class)->group(function () {

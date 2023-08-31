@@ -12,6 +12,15 @@
             <main>
                 <section id="task-section">
                     <h1>Edit Task</h1>
+
+                    @if($errors->any())
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    
                     <form method="POST" action="{{ url('/task/update', ['id' => $task->id]) }}">
                         @csrf
                         @method('PUT')
@@ -27,12 +36,12 @@
 
                         <div class="div-form">
                             <label for="title">Title of Task</label>
-                            <input type="text" name="title" id="title" placeholder="Enter task title" value="{{ $task->title ?? '' }}" required/>
+                            <input type="text" name="title" id="title" value="{{ $task->title ?? '' }}" required/>
                         </div>
 
                         <div class="div-form">
                             <label for="date">Date</label>
-                            <input type="datetime-local" name="date" id="date" placeholder="Enter the date" value="{{ $task->date ?? '' }}" required/>
+                            <input type="datetime-local" name="date" id="date" value="{{ $task->date ?? '' }}" required/>
                         </div>
 
                         <div class="div-form">
@@ -49,7 +58,7 @@
 
                         <div class="div-form"> 
                             <label for="description">Task description</label>
-                            <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter a description">{{ $task->description ?? '' }}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="10">{{ $task->description ?? '' }}</textarea>
                         </div>
 
                         <div class="div-form">
