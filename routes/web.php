@@ -17,20 +17,20 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index');
     Route::post('/login/store', 'loginStore');
     Route::get('/register', 'register');
     Route::post('/register/store', 'registerStore');
-    Route::get('/logout', 'logout');
+    Route::get('/logout', 'logout')->middleware('auth');
 });
 
 Route::controller(TaskController::class)->group(function () {
-    Route::get('/task/create', 'create');
-    Route::post('/task/store', 'store');
-    Route::get('/task/edit/{id}', 'edit');
-    Route::put('/task/update/{id}', 'update');
-    Route::get('/task/delete/{id}', 'delete');
+    Route::get('/task/create', 'create')->middleware('auth');
+    Route::post('/task/store', 'store')->middleware('auth');
+    Route::get('/task/edit/{id}', 'edit')->middleware('auth');
+    Route::put('/task/update/{id}', 'update')->middleware('auth');
+    Route::get('/task/delete/{id}', 'delete')->middleware('auth');
 });
