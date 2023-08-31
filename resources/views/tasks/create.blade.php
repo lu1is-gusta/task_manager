@@ -22,7 +22,7 @@
 
                         <div class="div-form">
                             <label for="date">Date</label>
-                            <input type="date" name="date" id="date" placeholder="Enter the date" required/>
+                            <input type="datetime-local" name="date" id="date" placeholder="Enter the date" required/>
                         </div>
 
                         <div class="div-form">

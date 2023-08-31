@@ -56,7 +56,7 @@
                                     <a href="{{ url('/task/edit', ['id' => $taskHome->id]) }}">
                                         <img src="/assets/images/icon-edit.png" alt="">
                                     </a> 
-                                    <a href="#">
+                                    <a href="{{ url('/task/delete', ['id' => $taskHome->id]) }}">
                                         <img src="/assets/images/icon-delete.png" alt="">
                                     </a> 
                                 </div>

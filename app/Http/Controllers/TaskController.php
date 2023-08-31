@@ -35,9 +35,17 @@ class TaskController extends Controller
         
         $task = Task::findOrFail($id)->update([
             'title' => $request->title,
+            'date' => $request->date,
             'category_id' => $request->category_id,
             'description' => $request->description
         ]);
+        
+        return redirect(route('home'));
+    }
+
+    public function delete($id){
+        
+        $task = Task::findOrFail($id)->delete();
         
         return redirect(route('home'));
     }
