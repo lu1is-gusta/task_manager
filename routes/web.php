@@ -33,4 +33,5 @@ Route::controller(TaskController::class)->group(function () {
     Route::get('/task/edit/{id}', 'edit')->middleware('auth');
     Route::put('/task/update/{id}', 'update')->middleware('auth');
     Route::get('/task/delete/{id}', 'delete')->middleware('auth');
+    Route::post('/task/taskStatus', 'taskStatus')->middleware('auth');
 });

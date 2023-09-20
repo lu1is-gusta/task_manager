@@ -43,7 +43,7 @@
                         <div class="task-list">
                             <div class="task">
                                 <div class="title">
-                                    <input type="checkbox"
+                                    <input type="checkbox" onchange="taskStatus(this)" data-id="{{ $taskHome->id }}"
                                         @if($taskHome and $taskHome->done)
                                             checked
                                         @endif
@@ -69,4 +69,23 @@
             </main>
         </div>
     </div>
+
+<script>
+    async function taskStatus(element){
+        let taskStatus = element.checked
+        let taskId = element.dataset.id
+        let url = "{{ url('/task/taskStatus') }}"
+        const request = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'    
+            },
+            body: JSON.stringify({taskStatus, taskId, _token: '{{ csrf_token() }}'})
+        })
+
+        result = await request.json()
+    }
+</script>
 @endsection
+
