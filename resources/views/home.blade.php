@@ -22,7 +22,9 @@
                             <img src="/assets/images/icon-next.png" alt="">
                         </div>
                     </div>
-                    <div class="graph-header-subtitle"> Tasks: <b>3/6</b></div>
+                    <div class="graph-header-subtitle"> Tasks: 
+                        <b>{{ $taskCount - $taskOpenCount }}/{{ $taskCount }}</b>
+                    </div>
 
                     <div class="graph-placeholder">
                         
@@ -30,7 +32,7 @@
 
                     <div class="tasks-left-footer">
                         <img src="/assets/images/icon-info.png" alt="">
-                        sjkdhkasjdhkjshdkjdhaksjdhasdkjasdhjkas
+                        {{ $taskOpenCount }} Tasks left to be completed
                     </div>
                 </section>
                 <section class="list">
