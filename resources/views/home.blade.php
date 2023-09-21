@@ -17,9 +17,13 @@
                         <h2>Progress of the Day</h2>
                         <div class="graph-header-line"></div>
                         <div class="graph-geader-date">
-                            <img src="/assets/images/icon-prev.png" alt="">
-                                March, 16
-                            <img src="/assets/images/icon-next.png" alt="">
+                            <a href="{{ route('home', ['date' => $previousDate]) }}" >
+                                <img src="/assets/images/icon-prev.png" alt="">
+                            </a> 
+                                {{ $formatDate }}
+                            <a href="{{ route('home', ['date' => $nextDate]) }}">
+                                <img src="/assets/images/icon-next.png" alt="">
+                            </a> 
                         </div>
                     </div>
                     <div class="graph-header-subtitle"> Tasks: 
