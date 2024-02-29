@@ -33,13 +33,15 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
-        
+        // dd('aqui');
         if(Auth::attempt($validation)){
             $request->session()->regenerate();
 
             return redirect()->route('home');
         } else {
-            return redirect()->back();
+            return redirect()->back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
         }
     }
 
